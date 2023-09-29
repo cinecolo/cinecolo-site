@@ -1,0 +1,13 @@
+  - name: 'editions'
+    create: true
+    label: 'Éditions'
+    folder: 'docs/jekyll_editions/_posts/'
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Titre, par exemple "Edition 2021"', name: 'title', widget: 'string' }
+      - label: "Images"
+        name: "img"
+        widget: "list"
+        required: false
+        field: {label: Image, name: image, widget: image}
+      - { label: 'Content', name: 'body', widget: 'markdown' }

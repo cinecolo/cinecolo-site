@@ -1,7 +1,7 @@
 ---
 ---
 {% assign slug = "{{year}}-{{month}}-{{day}}-{{slug}}" %}
-locale: 'en'
+locale: 'fr'
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -16,10 +16,4 @@ backend:
 media_folder: 'docs/media'
 public_folder: "/media"
 collections:
-{% include netlifycms_landing.html %}
-{% include netlifycms_config.html %}
-{% include netlifycms_pages.html %}
-{% include netlifycms_events.html %}
-{% include netlifycms_blog.html %}
-{% include netlifycms_locations.html %}
-{% include netlifycms_imageinfo.html %}
+{% include netlifycms_editions.html %}
