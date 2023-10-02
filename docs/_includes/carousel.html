@@ -1,24 +1,33 @@
-{% if site.categories.jekyll_carousel | size %}
+{% if site.categories.jekyll_carousel.size > 0 %}
   <section id="center" class="center_home">
   <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
     <!-- Overlay -->
     <div class="overlay"></div>
     <!-- Indicators -->
+    {% if site.categories.jekyll_carousel.size > 1 %}
     <ol class="carousel-indicators">
-      <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+      {% assign count = 0 %}
+      {% for carousel in site.categories.jekyll_carousel %}
+      <li data-target="#bs-carousel" data-slide-to="{{ count }}" class="active"></li>
+      {% assign count = count + 1 %}
+      {% endfor %}
     </ol>
+    {% endif %}
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
+      {% assign count = 1 %}
+      {% for carousel in site.categories.jekyll_carousel %}
       <div class="item slides active">
-        <div class="slide-1 single-slide" style="background-image:url(/media/px1.jpg)"></div>
+        <div class="slide-{{ count }} single-slide" style="background-image:url(/media/px1.jpg)"></div>
         <div class="hero">
-          <h1 class="mgt">CINECOLO-HAITI {{ site.categories.jekyll_carousel | size }}
-          </h1>
+          <h1 class="mgt">{{ carousel.title }}</h1>
           <hr>
-          <h3>Le Festival Cinécolo-Haïti, initié en 2015, est le premier festival international du film de l’environnement d’Haïti.</h3>
-          <h4><a class="button" href="#">Voir Plus</a></h4>
+          <h3>{{ carousel.soustitre }}</h3>
+          <h4><a class="button" href="{{ carousel.url }}">{{ carousel.label }}</a></h4>
         </div>
       </div>
+      {% assign count = count + 1 %}
+      {% endfor %}
     </div>
   </div>
 </section>
