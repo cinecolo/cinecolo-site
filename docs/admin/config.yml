@@ -17,3 +17,4 @@ media_folder: 'docs/media'
 public_folder: "/media"
 collections:
 {% include netlifycms_editions.html %}
+{% include netlifycms_carousel.html %}

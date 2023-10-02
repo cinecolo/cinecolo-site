@@ -1,0 +1,13 @@
+  - name: 'carousel'
+    create: true
+    label: 'Panneaux du carousel'
+    folder: 'docs/jekyll_carousel/_posts/'
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Titre, par exemple "Edition 2021"', name: 'title', widget: 'string' }
+      - label: "Image"
+        name: "img"
+        widget: "image"
+        required: false
+      - { label: 'Titre du bouton', name: 'label', widget: 'string', required: false }
+      - { label: 'Lien du bouton', name: 'url', widget: 'string', required, false }
