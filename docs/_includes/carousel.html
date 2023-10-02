@@ -1,4 +1,5 @@
-<section id="center" class="center_home">
+{% if site.categories.jekyll_carousel | size %}
+  <section id="center" class="center_home">
   <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
     <!-- Overlay -->
     <div class="overlay"></div>
@@ -21,3 +22,4 @@
     </div>
   </div>
 </section>
+{% endif %}
