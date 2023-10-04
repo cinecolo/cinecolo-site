@@ -10,9 +10,31 @@
   border: 1px solid #d3b800;
 }
 .main-text {
-  color: white;
+  color: black;
+}
+.main-text .protect_m {
+  background: white;
 }
 .main-text a {
+  color: black;
+}
+.main-text.carousel-is-visible {
+  color: white;
+
+}
+.main-text.carousel-is-visible .protect_m {
+  background: black;
+}
+.main-text.carousel-is-visible a {
   color: white;
   text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .anchor-wrapper {
+    position: relative;
+  }
+  .anchor {
+    position: absolute;
+    top: -146px;
+  }
 }

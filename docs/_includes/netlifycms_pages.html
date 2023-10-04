@@ -21,14 +21,20 @@
         field: {label: Image, name: image, widget: image}
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }
       - label: 'Montrer le carousel'
-        name: 'permalink'
-        widget: 'show_carousel'
+        name: 'show_carousel'
+        widget: 'bool'
       - label: 'Montrer le logo et les liens rapides'
-        name: 'permalink'
-        widget: 'show_logo_and_quicklinks'
+        name: 'show_logo_and_quicklinks'
+        widget: 'bool'
+      - label: 'Montrer le palmarès'
+        name: 'show_palmares'
+        widget: 'bool'
+      - label: "Montrer section contact"
+        name: 'show_contact'
+        widget: 'bool'
       - label: "Montrer l'équipe"
-        name: 'permalink'
-        widget: 'show_equipe'
+        name: 'show_equipe'
+        widget: 'bool'
       - label: 'Animer au déroulement'
-        name: 'page.animate_on_scroll'
+        name: 'animate_on_scroll'
         widget: 'bool'

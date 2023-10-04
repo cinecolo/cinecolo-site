@@ -1,5 +1,8 @@
 {% if page.show_logo_and_quicklinks %}
-<section id="about"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+<div class="anchor-wrapper">
+  <div class="anchor" id="about"></div>
+</div>
+<section id="about-no-anchor-wrapper"{% if page.animate_on_scroll %} class="animation"{% endif %}>
   <div class="container">
     <div class="row">
       <div class="about_1 clearfix">
@@ -21,7 +24,7 @@
               </div>
               <div class="col-sm-10">
                 <div class="about_right_ir clearfix">
-                  <h4 class="mgt">Qui Sommes Nous?</h4>
+                  <h4 class="mgt"><a href="/#qui-sommes-nous">Qui Sommes Nous?</a></h4>
                 </div>
               </div>
             </div>
@@ -34,10 +37,11 @@
               </div>
               <div class="col-sm-10">
                 <div class="about_right_ir clearfix">
-                  <h4 class="mgt">Notre Equipe</h4>
+                  <h4 class="mgt"><a href="/#equipe">Notre Equipe</a></h4>
                 </div>
               </div>
             </div>
+            {% if false %}
             <br>
             <div class="about_right_i clearfix">
               <div class="col-sm-2">
@@ -51,6 +55,7 @@
                 </div>
               </div>
             </div>
+            {% endif %}
           </div>
         </div>
       </div>
