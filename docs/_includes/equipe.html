@@ -1,4 +1,5 @@
-<section id="worker" class="animation">
+{% if page.show_equipe and site.categories.jekyll_equipe.size > 0 %}
+<section id="worker"{% if page.animate_on_scroll %} class="animation"{% endif %}>
   <div class="container">
     <div class="row">
       <div class="feature_1 text-center clearfix">
@@ -10,60 +11,37 @@
         <div class="carousel slide center_shop_1li1" id="myCarousel">
           <div class="carousel-inner">
             <div class="item active">
+              {% assign membre_by_order = site.categories.jekyll_equipe | sort: "order" %}
+              {% for membre in membre_by_order %}
               <div class="col-sm-4">
                 <div class="worker_1i text-center clearfix">
-                  <span><i class="fa fa-user"></i></span>
-                  <h4>Messerne SAGESSE</h4>
-                  <h5>Président</h5>
-                  <p class="mgt"><i class="fa fa-quote-left"></i> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet <i class="fa fa-quote-right"></i></p>
+                  <span>
+                    {% if membre.img %}
+                      <div class="equipe-image" style="background-image: url({{membre.img}})"></div>
+                    {% else %}
+                      <i class="fa fa-user"></i>
+                    {% endif %}
+                  </span>
+                  <h4>{{ membre.title }}</h4>
+                  <h5>{{ membre.fonction }}</h5>
+                  {% if membre.bio %}
+                    <p class="mgt"><i class="fa fa-quote-left"></i>{{membre.bio|truncate: 60}} <a href="{{membre.url}}">[lire plus]</a></a><i class="fa fa-quote-right"></i></p>
+                  {% endif %}
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="worker_1i text-center clearfix">
-                  <span><i class="fa fa-user"></i></span>
-                  <h4>Samuel JOZIL</h4>
-                  <h5>Vice-Président</h5>
-                  <p class="mgt"><i class="fa fa-quote-left"></i> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet <i class="fa fa-quote-right"></i></p>
+              {% assign remainder = forloop.index | modulo:3 %}
+              {% if remainder == 0 %}
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="worker_1i text-center clearfix">
-                  <span><i class="fa fa-user"></i></span>
-                  <h4>Bronson THEODORE </h4>
-                  <h5>Coordonnateur de Programmation</h5>
-                  <p class="mgt"><i class="fa fa-quote-left"></i> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet <i class="fa fa-quote-right"></i></p>
+                {% if forloop.last == false %}
+                <div class="item">
+                {% endif %}
+              {% endif %}
+              {% if forloop.last %}
                 </div>
-              </div>
-            </div>
-            <!-- /Slide1 -->
-            <div class="item">
-              <div class="col-sm-4">
-                <div class="worker_1i text-center clearfix">
-                  <span><i class="fa fa-user"></i></span>
-                  <h4>Wigiany MOYEN</h4>
-                  <h5>Responsable Logistique et trésorerie</h5>
-                  <p class="mgt"><i class="fa fa-quote-left"></i> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet <i class="fa fa-quote-right"></i></p>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="worker_1i text-center clearfix">
-                  <span><i class="fa fa-user"></i></span>
-                  <h4>Kattia JEAN-FRANCOIS</h4>
-                  <h5>Responsable de communication</h5>
-                  <p class="mgt"><i class="fa fa-quote-left"></i> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet <i class="fa fa-quote-right"></i></p>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="worker_1i text-center clearfix">
-                  <span><i class="fa fa-user"></i></span>
-                  <h4>Roseline JEAN-BAPTISTE</h4>
-                  <h5>Secrétaire </h5>
-                  <p class="mgt"><i class="fa fa-quote-left"></i> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet <i class="fa fa-quote-right"></i></p>
-                </div>
-              </div>
-            </div>
-            <!-- /Slide2 -->
-            <!-- /Slide3 -->
+              {% endif %}
+            <!-- </div>
+            <div class="item"> -->
+            {% endfor %}
           </div>
           <nav>
             <ul class="control-box pager">
@@ -76,3 +54,4 @@
     </div>
   </div>
 </section>
+{% endif %}

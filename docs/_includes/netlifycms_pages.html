@@ -5,14 +5,8 @@
     slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - label: 'Layout'
-        name: 'layout'
-        widget: select
-        options:
-          - { label: "List of events", value: "eventlist" }
-          - { label: "List of blog posts", value: "bloglist" }
-          - { label: "Basic pages", value: "page" }
-      - label: 'Path (for example /privacy-policy/)'
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+      - label: 'Chemin (for example /a-propos/)'
         name: 'permalink'
         widget: 'string'
         {% include netlifycms_validate_path.html %}
@@ -26,3 +20,15 @@
         required: false
         field: {label: Image, name: image, widget: image}
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }
+      - label: 'Montrer le carousel'
+        name: 'permalink'
+        widget: 'show_carousel'
+      - label: 'Montrer le logo et les liens rapides'
+        name: 'permalink'
+        widget: 'show_logo_and_quicklinks'
+      - label: "Montrer l'équipe"
+        name: 'permalink'
+        widget: 'show_equipe'
+      - label: 'Animer au déroulement'
+        name: 'page.animate_on_scroll'
+        widget: 'bool'

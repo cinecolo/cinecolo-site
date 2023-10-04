@@ -1,7 +1,8 @@
 ---
 title: Samuel JOZIL
+layout: page
 img: /media/screenshot_2023-10-02_at_6.06.37_pm.jpg
-fonction: Vice-Président
+fonction: Vice-Président, CA
 bio: Natif de la commune de l’Asile dans le département des Nippes d’Haïti,
   Samuel JOZIL est né le  27 novembre 1995. À l’âge de 16 ans, il a fait ses
   débuts comme formateur au Programme Initiative Jeune (PIJ) initié par la
@@ -18,5 +19,5 @@ bio: Natif de la commune de l’Asile dans le département des Nippes d’Haïti
   l’Association Maison Verte d’Haïti, M. JOZIL fait, actuellement, une maîtrise
   en Géographie, environnement, aménagement et développement à l’Université
   Paris Diderot (France).
-order: "2"
+order: "200"
 ---
