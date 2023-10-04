@@ -16,3 +16,12 @@
   color: white;
   text-decoration: underline;
 }
+@media (min-width: 768px) {
+  .anchor-wrapper {
+    position: relative;
+  }
+  .anchor {
+    position: absolute;
+    top: -146px;
+  }
+}
