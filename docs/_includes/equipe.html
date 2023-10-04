@@ -1,0 +1,57 @@
+{% if page.show_equipe and site.categories.jekyll_equipe.size > 0 %}
+<section id="worker"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="feature_1 text-center clearfix">
+        <div class="col-sm-12">
+          <h3 class="mgt">NOTRE EQUIPE</h3>
+        </div>
+      </div>
+      <div class="worker_1 clearfix">
+        <div class="carousel slide center_shop_1li1" id="myCarousel">
+          <div class="carousel-inner">
+            <div class="item active">
+              {% assign membre_by_order = site.categories.jekyll_equipe | sort: "order" %}
+              {% for membre in membre_by_order %}
+              <div class="col-sm-4">
+                <div class="worker_1i text-center clearfix">
+                  <span>
+                    {% if membre.img %}
+                      <div class="equipe-image" style="background-image: url({{membre.img}})"></div>
+                    {% else %}
+                      <i class="fa fa-user"></i>
+                    {% endif %}
+                  </span>
+                  <h4>{{ membre.title }}</h4>
+                  <h5>{{ membre.fonction }}</h5>
+                  {% if membre.bio %}
+                    <p class="mgt"><i class="fa fa-quote-left"></i>{{membre.bio|truncate: 60}} <a href="{{membre.url}}">[lire plus]</a></a><i class="fa fa-quote-right"></i></p>
+                  {% endif %}
+                </div>
+              </div>
+              {% assign remainder = forloop.index | modulo:3 %}
+              {% if remainder == 0 %}
+                </div>
+                {% if forloop.last == false %}
+                <div class="item">
+                {% endif %}
+              {% endif %}
+              {% if forloop.last %}
+                </div>
+              {% endif %}
+            <!-- </div>
+            <div class="item"> -->
+            {% endfor %}
+          </div>
+          <nav>
+            <ul class="control-box pager">
+              <li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+              <li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

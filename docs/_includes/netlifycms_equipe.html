@@ -1,0 +1,15 @@
+  - name: 'equipeBAD'
+    create: true
+    label: 'Membres'
+    folder: 'docs/jekyll_equipe/_posts/'
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+      - { label: 'Nom de la personne', name: 'title', widget: 'string' }
+      - label: "Image"
+        name: "img"
+        widget: "image"
+        required: false
+      - { label: 'Fonction', name: 'fonction', widget: 'string', required: false }
+      - { label: 'Bio', name: 'bio', widget: 'markdown', required: false }
+      - { label: 'Ordre', name: 'order', widget: 'string', required: false }

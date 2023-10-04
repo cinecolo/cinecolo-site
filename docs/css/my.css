@@ -1,0 +1,18 @@
+.equipe-image {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  background-size: 180%;
+  background-repeat: no-repeat;
+  border: 1px solid #d3b800;
+}
+.main-text {
+  color: white;
+}
+.main-text a {
+  color: white;
+  text-decoration: underline;
+}

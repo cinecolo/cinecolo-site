@@ -1,0 +1,34 @@
+{% if page.show_carousel and site.categories.jekyll_carousel.size > 0 %}
+  <section id="center" class="center_home">
+  <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+    <!-- Overlay -->
+    <div class="overlay"></div>
+    <!-- Indicators -->
+    {% if site.categories.jekyll_carousel.size > 1 %}
+    <ol class="carousel-indicators">
+      {% assign count = 0 %}
+      {% for carousel in site.categories.jekyll_carousel | sort: order %}
+      <li data-target="#bs-carousel" data-slide-to="{{ count }}" class="active"></li>
+      {% assign count = count + 1 %}
+      {% endfor %}
+    </ol>
+    {% endif %}
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      {% assign count = 1 %}
+      {% for carousel in site.categories.jekyll_carousel | sort: order %}
+      <div class="item slides active">
+        <div class="slide-{{ count }} single-slide" style="background-image:url(/media/px1.jpg)"></div>
+        <div class="hero">
+          <h1 class="mgt">{{ carousel.title }}</h1>
+          <hr>
+          <h3>{{ carousel.soustitre }}</h3>
+          <h4><a class="button" href="{{ carousel.target }}">{{ carousel.label }}</a></h4>
+        </div>
+      </div>
+      {% assign count = count + 1 %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
