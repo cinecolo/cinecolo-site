@@ -52,25 +52,13 @@
                 <a class="page-scroll font_tag" href="/#center">Accueil</a>
               </li>
               <li>
-                <a class="page-scroll font_tag" href="/#about">Le Festival</a>
+                <a class="page-scroll font_tag" href="/#equipe">L'équipe</a>
               </li>
               <li>
-                <a class="page-scroll font_tag" href="/#feature">Palmar&egrave;s</a>
+                <a class="page-scroll font_tag" href="/#palmares">Palmarès</a>
               </li>
               <li>
-                <a class="page-scroll font_tag" href="/#project">Presse</a>
-              </li>
-              <li>
-                <a class="page-scroll font_tag" href="/#team">Partenaires</a>
-              </li>
-              <li>
-                <a class="page-scroll font_tag" href="/#blog">Coins du doc</a>
-              </li>
-              <li>
-                <a class="page-scroll font_tag" href="/#contact">Nous Contacter</a>
-              </li>
-              <li>
-                <a class="page-scroll font_tag_1" href="/#"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><i class="fa fa-user"></i></button></a>
+                <a class="page-scroll font_tag" href="/#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -129,13 +117,16 @@
     {% include logo_and_quicklinks.html %}
     {% assign stripped = content | strip %}
     {% if stripped != "" %}
-    <section class="main-text" id="protect"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+    <div class="anchor-wrapper">
+      <div class="anchor" id="qui-sommes-nous"></div>
+    </div>
+    <section id="protect" class="main-text {% if page.animate_on_scroll %}animation{% endif %} {% if page.show_carousel %}carousel-is-visible{% endif %}">
       <div class="protect_m clearfix">
         <div class="container">
           <div class="row">
             <div class="protect_1 clearfix">
               <div class="col-sm-12">
-                <h3 class="mgt col">{{ page.title }}</h3>
+                <h3 class="mgt">{{ page.title }}</h3>
                 <p class="col">
                   {{ content | markdownify }}
                 </p>
@@ -147,7 +138,11 @@
     </section>
     {% endif %}
     {% include equipe.html %}
-    <section id="team"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+    {% if false %}
+    <div class="anchor-wrapper">
+      <div class="anchor" id="team"></div>
+    </div>
+    <section id="team-no-anchor-wrapper"{% if page.animate_on_scroll %} class="animation"{% endif %}>
       <div class="container">
         <div class="row">
           <div class="feature_1 text-center clearfix">
@@ -276,86 +271,13 @@
         </div>
       </div>
     </section>
-    <section id="blog"{% if page.animate_on_scroll %} class="animation"{% endif %}>
-      <div class="container">
-        <div class="row">
-          <div class="feature_1 text-center clearfix">
-            <div class="col-sm-12">
-              <h3 class="mgt">PALMAR&Egrave;S</h3>
-            </div>
-          </div>
-          <div class="blog_1 clearfix">
-            <div class="col-sm-4">
-              <div class="blog_1i clearfix">
-                <a href="/#"><img src="/img/2017.png" alt="abc" class="iw"></a>
-                <div class="blog_1ii clearfix">
-                  <h4 class="mgt"><a href="/#">Édition 2016</a></h4>
-                  <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                  <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
-                  <h5><a class="button_1" href="/#">Read More</a></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="blog_1i clearfix">
-                <a href="/#"><img src="/img/2017.png" alt="abc" class="iw"></a>
-                <div class="blog_1ii clearfix">
-                  <h4 class="mgt"><a href="/#">Édition 2017</a></h4>
-                  <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                  <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
-                  <h5><a class="button_1" href="/#">Read More</a></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="blog_1i clearfix">
-                <a href="/#"><img src="/img/2018.png" alt="abc" class="iw"></a>
-                <div class="blog_1ii clearfix">
-                  <h4 class="mgt"><a href="/#">Édition 2018</a></h4>
-                  <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                  <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
-                  <h5><a class="button_1" href="/#">Read More</a></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="blog_1i clearfix">
-                <a href="/#"><img src="/img/2019.png" alt="abc" class="iw"></a>
-                <div class="blog_1ii clearfix">
-                  <h4 class="mgt"><a href="/#">Édition 2019</a></h4>
-                  <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                  <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
-                  <h5><a class="button_1" href="/#">Read More</a></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="blog_1i clearfix">
-                <a href="/#"><img src="/img/2020.png" alt="abc" class="iw"></a>
-                <div class="blog_1ii clearfix">
-                  <h4 class="mgt"><a href="/#">Édition 2020</a></h4>
-                  <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                  <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
-                  <h5><a class="button_1" href="/#">Read More</a></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="blog_1i clearfix">
-                <a href="/#"><img src="/img/2020.png" alt="abc" class="iw"></a>
-                <div class="blog_1ii clearfix">
-                  <h4 class="mgt"><a href="/#">Édition 2021</a></h4>
-                  <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                  <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
-                  <h5><a class="button_1" href="/#">Read More</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="feature"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+    {% endif %}
+    {% include palmares.html %}
+    {% if false %}
+    <div class="anchor-wrapper">
+      <div class="anchor" id="feature"></div>
+    </div>
+    <section id="feature-no-anchor-wrapper"{% if page.animate_on_scroll %} class="animation"{% endif %}>
       <div class="container">
         <div class="row">
           <div class="feature_1 text-center clearfix">
@@ -412,6 +334,8 @@
         </div>
       </div>
     </section>
+    {% endif %}
+    {% if false %}
     <section id="contri"{% if page.animate_on_scroll %} class="animation"{% endif %}>
       <div class="container">
         <div class="row">
@@ -426,6 +350,8 @@
         </div>
       </div>
     </section>
+    {% endif %}
+    {% if false %}
     <div class="anchor-wrapper">
       <div class="anchor" id="project"></div>
     </div>
@@ -484,6 +410,8 @@
         </div>
       </div>
     </section>
+    {% endif %}
+    {% if false %}
     <section id="portfolio"{% if page.animate_on_scroll %} class="animation"{% endif %}>
       <div class="container">
         <div class="feature_1 text-center clearfix">
@@ -510,39 +438,33 @@
         </div>
       </div>
     </section>
-    <section id="contact">
+    {% endif %}
+    {% if page.show_contact %}
+    <div class="anchor-wrapper">
+      <div class="anchor" id="contact"></div>
+    </div>
+    <section id="contact-no-anchor-wrapper">
       <div class="container">
         <div  class="row">
           <div class="feature_1 text-center clearfix">
             <div class="col-sm-12">
-              <h3 class="mgt">CONTACTEZ NOUS</h3>
-              <p>HELPING ANIMALS &amp; WORKING ON ENVIRONMENTAL ISSUES.</p>
+              <h3 class="mgt">CONTACTEZ-NOUS</h3>
             </div>
           </div>
           <div class="contact_1 clearfix">
-            <div class="col-sm-5">
-              <div class="contact1lt text-center clearfix">
-                <h3 class="col_1">Get In Touch</h3>
-              </div>
+            <div class="col-sm-6">
               <div class="contact_1l text-center clearfix">
                 <span><i class="fa fa-envelope"></i></span>
-                <h6><a href="/#">info@gmail.com</a></h6>
-                <h6><a href="/#">info@gmail1.com</a></h6>
-                <h6><a href="/#">info@gmail2.com</a></h6>
+                <h6><a href="mailto:example@example.com">example@example.com</a></h6>
               </div>
+            </div>
+            <div class="col-sm-6">
               <div class="contact_1l text-center clearfix">
                 <span><i class="fa fa-phone"></i></span>
                 <h6>+123 123 7890</h6>
-                <h6>+123 123 7890</h6>
-                <h6>+123 123 7890</h6>
-              </div>
-              <div class="contact_1l text-center clearfix">
-                <span><i class="fa fa-home"></i></span>
-                <h6>USA</h6>
-                <h6>HAITI</h6>
-                <h6>FRANCE</h6>
               </div>
             </div>
+            {% if false %}
             <div class="col-sm-7">
               <div class="contact1lt text-center clearfix">
                 <h3 class="col_1">Contactez Nous</h3>
@@ -561,10 +483,13 @@
                 </div>
               </div>
             </div>
+            {% endif %}
           </div>
         </div>
       </div>
     </section>
+    {% endif %}
+    {% if false %}
     <section id="footer_top">
       <div class="container">
         <div class="row">
@@ -601,6 +526,7 @@
         </div>
       </div>
     </section>
+    {% endif %}
     <section id="footer_bottom">
       <div class="container">
         <div class="row">
@@ -613,11 +539,11 @@
             <div class="col-sm-5">
               <div class="footer_bottom_right text-right">
                 <ul class="social-network social-circle mgt">
-                  <li><a href="/#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                  <li><a href="/#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="/#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                  <!-- <li><a href="/#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li> -->
+                  <li><a href="https://www.facebook.com/cinecolohaiti7" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                  <!-- <li><a href="/#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                   <li><a href="/#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="/#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="/#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li> -->
                 </ul>
               </div>
             </div>

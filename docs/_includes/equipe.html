@@ -1,5 +1,8 @@
 {% if page.show_equipe and site.categories.jekyll_equipe.size > 0 %}
-<section id="worker"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+<div class="anchor-wrapper">
+  <div class="anchor" id="equipe"></div>
+</div>
+<section id="equipe-no-anchor-wrapper"{% if page.animate_on_scroll %} class="animation"{% endif %}>
   <div class="container">
     <div class="row">
       <div class="feature_1 text-center clearfix">
@@ -24,8 +27,9 @@
                   </span>
                   <h4>{{ membre.title }}</h4>
                   <h5>{{ membre.fonction }}</h5>
-                  {% if membre.bio %}
-                    <p class="mgt"><i class="fa fa-quote-left"></i>{{membre.bio|truncate: 60}} <a href="{{membre.url}}">[lire plus]</a></a><i class="fa fa-quote-right"></i></p>
+                  {% assign stripped = membre.content | strip %}
+                  {% if stripped != "" %}
+                    <p class="mgt"><i class="fa fa-quote-left"></i>{{membre.content|truncate: 60}} <a href="{{membre.url}}">[lire plus]</a></a><i class="fa fa-quote-right"></i></p>
                   {% endif %}
                 </div>
               </div>

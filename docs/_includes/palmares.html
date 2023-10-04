@@ -1,0 +1,32 @@
+{% if page.show_palmares and site.categories.jekyll_editions.size > 0 %}
+<div class="anchor-wrapper">
+  <div class="anchor" id="palmares"></div>
+</div>
+<section id="palmares-no-anchor-wrapper"{% if page.animate_on_scroll %} class="animation"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="feature_1 text-center clearfix">
+        <div class="col-sm-12">
+          <h3 class="mgt">PALMAR&Egrave;S</h3>
+        </div>
+      </div>
+      <div class="blog_1 clearfix">
+      {% assign editions_by_title = site.categories.jekyll_editions | sort: "title" %}
+      {% for edition in editions_by_title %}
+        <div class="col-sm-4">
+          <div class="blog_1i clearfix">
+            <a href="/#"><img src="{{ edition.img[0]}}" alt="{{ edition.title }}: affiche" class="iw"></a>
+            <div class="blog_1ii clearfix">
+              <h4 class="mgt"><a href="/#">{{ edition.title }}</a></h4>
+              <!-- <p>{{ edition.img[0]}}</p> -->
+              <!-- <h6><i class="fa fa-calendar"></i> 18.11.2019</h6>
+              <h5><a class="button_1" href="/#">Read More</a></h5> -->
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
