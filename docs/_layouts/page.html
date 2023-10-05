@@ -452,18 +452,20 @@
             </div>
           </div>
           <div class="contact_1 clearfix">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
               <div class="contact_1l text-center clearfix">
                 <span><i class="fa fa-envelope"></i></span>
-                <h6><a href="mailto:example@example.com">example@example.com</a></h6>
+                <h6><a href="mailto:{{site.data.config.email}}">{{site.data.config.email}}</a></h6>
               </div>
             </div>
+            {% if false %}
             <div class="col-sm-6">
               <div class="contact_1l text-center clearfix">
                 <span><i class="fa fa-phone"></i></span>
                 <h6>+123 123 7890</h6>
               </div>
             </div>
+            {% endif %}
             {% if false %}
             <div class="col-sm-7">
               <div class="contact1lt text-center clearfix">
